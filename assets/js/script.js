@@ -90,10 +90,10 @@ var upperCasedCharacters = [
 
 var menu_choices = {
   length: 10,
-  lowercase: false,
-  uppercase: false,
-  numeric: false,
-  special: false,
+  lowercase: true,
+  uppercase: true,
+  numeric: true,
+  special: true,
 }
 
 // Function to prompt user for password options
@@ -108,7 +108,20 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
+  selectedOptions = []
+  password = '';
 
+  if(menu_choices.lowercase){selectedOptions.push(lowerCasedCharacters)}
+  if(menu_choices.uppercase){selectedOptions.push(upperCasedCharacters)}
+  if(menu_choices.numeric){selectedOptions.push(numericCharacters)}
+  if(menu_choices.special){selectedOptions.push(specialCharacters)}
+
+  for(i=0; i<menu_choices.length; i++){
+    // character = getRandom(selectedOptions[Math.floor(Math.random() * selectedOptions.length)])
+    character = getRandom(getRandom(selectedOptions))
+    password += character;
+  }
+  return password
 }
 
 // Get references to the #generate element
