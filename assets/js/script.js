@@ -131,6 +131,11 @@ function generatePassword() {
   if(menu_choices.numeric){selectedOptions.push(numericCharacters)}
   if(menu_choices.special){selectedOptions.push(specialCharacters)}
 
+  if(selectedOptions.length==0){
+    valid = confirm("Please selected at least one character type");
+    return ''
+  }
+
   for(i=0; i<menu_choices.length; i++){
     character = getRandom(getRandom(selectedOptions))
     password += character;
