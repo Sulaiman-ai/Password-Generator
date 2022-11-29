@@ -102,8 +102,8 @@ var menu_choices = {
 function getPasswordOptions() {
   valid = false
   while(!valid){
-    let length = prompt("Please enter a password length between 10 and 24", "10");
-    if(length>=10 && length <= 24){
+    let length = prompt("Please enter a password length between 10 and 64", "10");
+    if(length>=10 && length <= 64){
       valid = true;
       menu_choices.length = length;
     };
