@@ -88,6 +88,14 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+var menu_choices = {
+  length: 10,
+  lowercase: false,
+  uppercase: false,
+  numeric: false,
+  special: false,
+}
+
 // Function to prompt user for password options
 function getPasswordOptions() {
 
